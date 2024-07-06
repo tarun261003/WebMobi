@@ -66,7 +66,8 @@ print(f"Bot: Nice to meet you, {user_name}! Can I have your email?")
 
 
 # Ask for email with validation
-![image](https://github.com/tarun261003/WebMobi/assets/122869742/e0db1ad8-49c4-4629-84dc-e0e506cda50c)
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/b5cc706a-fa13-4d16-8f1a-120fc2c90ad2)
+
 
 
 # Ask for company
