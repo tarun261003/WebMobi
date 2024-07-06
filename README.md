@@ -56,7 +56,9 @@ user_info['name'] = user_name
 
 # Initialize chat history
 chat_history_ids = None
+
 bot_response, chat_history_ids = generate_response(f"My name is {user_name}", chat_history_ids)
+
 print(f"Bot: Nice to meet you, {user_name}! Can I have your email?")
 
 # Validate email
