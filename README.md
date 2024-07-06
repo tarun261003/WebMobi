@@ -64,24 +64,19 @@ print(f"Bot: Nice to meet you, {user_name}! Can I have your email?")
 
 
 # Ask for email with validation
-while True:
-    user_email = input("You: ")
-    if validate_email(user_email):
-        user_info['email'] = user_email
-        break
-    else:
-        print("Bot: That doesn't seem like a valid email address. Could you please enter a valid email?")
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/e0db1ad8-49c4-4629-84dc-e0e506cda50c)
 
-bot_response, chat_history_ids = generate_response(f"My email is {user_email}", chat_history_ids)
-print("Bot: Great! Lastly, could you tell me which company you are from?")
 
 # Ask for company
 user_company = input("You: ")
+
 user_info['company'] = user_company
+
 bot_response, chat_history_ids = generate_response(f"I am from {user_company}", chat_history_ids)
 
 # Thank the user and display collected information
 print(f"Bot: Thank you, {user_name}! Here is the information you provided:")
+
 print(user_info)
 
 # Enhanced response
