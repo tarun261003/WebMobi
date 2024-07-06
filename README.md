@@ -23,26 +23,21 @@ This project implements a basic conversational bot using Hugging Face's DialoGPT
 ### Model and Tokenizer Setup
 
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
-import re
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/31a337c0-2a69-47a2-a1cc-ac66e2784d24)
+
 
 # Initialize the model and tokenizer
-model_name = "microsoft/DialoGPT-medium"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/d89c23d4-51d7-4fe7-be4e-abd87a64244b)
+
 
 
 ### Response Generation Function
 
 
 # Function to generate response from the bot
-def generate_response(user_input, chat_history_ids):
-    new_user_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
-    bot_input_ids = torch.cat([chat_history_ids, new_user_input_ids], dim=-1) if chat_history_ids is not None else new_user_input_ids
-    chat_history_ids = model.generate(bot_input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id)
-    bot_response = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
-    return bot_response, chat_history_ids
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/26f9162a-f117-4032-8a8e-e905b0e5dff2)
+
+
 
 
 ### User Input Handling
@@ -53,8 +48,11 @@ user_info = {}
 
 # Start the conversation
 print("Bot: Hello! Welcome to our service. May I know your name?")
+
 user_name = input("You: ")
+
 user_info['name'] = user_name
+
 
 # Initialize chat history
 chat_history_ids = None
@@ -62,9 +60,8 @@ bot_response, chat_history_ids = generate_response(f"My name is {user_name}", ch
 print(f"Bot: Nice to meet you, {user_name}! Can I have your email?")
 
 # Validate email
-def validate_email(email):
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    return re.match(pattern, email) is not None
+![image](https://github.com/tarun261003/WebMobi/assets/122869742/d0070109-0501-439c-b943-156f4db72d24)
+
 
 # Ask for email with validation
 while True:
